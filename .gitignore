@@ -337,4 +337,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,rust,linux,macos,dotenv,windows,intellij,maven
 
+/node
+
 !.gitkeep
