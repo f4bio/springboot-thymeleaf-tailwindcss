@@ -14,7 +14,7 @@
 	<name>springboot-thymeleaf-tailwindcss</name>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 		<NODE_ENV>production</NODE_ENV>
 	</properties>
 
@@ -75,7 +75,7 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 						<configuration>
-							<nodeVersion>v12.11.0</nodeVersion>
+							<nodeVersion>v16.9.1</nodeVersion>
 						</configuration>
 					</execution>
 					<!-- Install all project dependencies -->

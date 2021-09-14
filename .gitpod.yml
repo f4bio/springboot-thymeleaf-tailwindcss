@@ -1,0 +1,25 @@
+tasks:
+- init: |
+    curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-doctor | bash
+    curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-doctor | bash
+    nodenv install
+    npm install
+    curl https://pre-commit.com/install-local.py | python -
+    pre-commit install
+    pre-commit run --all-files
+    ./mvnw package -DskipTests
+- command: |
+    npm run build:dev
+    java -jar target/*.jar
+
+# exposed ports
+ports:
+- port: 8080
+  onOpen: open-preview
+
+vscode:
+  extensions:
+    - redhat.java
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-test
+    - pivotal.vscode-spring-boot
