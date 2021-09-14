@@ -1,17 +1,20 @@
-const isProduction = process.env.NODE_ENV === 'production';
+const { cssnanoPlugin } = require("cssnano");
+const postcssPurgecss = require("@fullhuman/postcss-purgecss");
+
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
-	plugins: [
-		require('tailwindcss'),
-		require('autoprefixer'),
-		isProduction && require('@fullhuman/postcss-purgecss')({
-			content: [
-				'./src/main/resources/templates/**/*.html',
-			],
-			defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-		}),
-		isProduction && require('cssnano')({
-			preset: 'default',
-		}),
-	].filter(Boolean)
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    isProduction && postcssPurgecss({
+      content: [
+        "./src/main/resources/templates/**/*.html"
+      ],
+      defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+    }),
+    isProduction && cssnanoPlugin({
+      preset: "default"
+    })
+  ].filter(Boolean)
 };

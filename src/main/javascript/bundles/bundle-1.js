@@ -1,3 +1,3 @@
-import greet from '../greet';
+import greet from "../greet";
 
-greet('bundle-1');
+greet("bundle-1");
