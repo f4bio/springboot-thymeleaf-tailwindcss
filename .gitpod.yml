@@ -9,7 +9,7 @@ tasks:
     pre-commit run --all-files
     ./mvnw package -DskipTests
 - command: |
-    npm run build:dev
+    npm run build
     java -jar target/*.jar
 
 # exposed ports
