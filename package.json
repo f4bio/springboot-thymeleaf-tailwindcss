@@ -4,11 +4,11 @@
 	"private": true,
 	"scripts": {
 		"build": "npm run build:css && npm run build:js",
-		"build:css": "npx postcss src/main/css/**/*.css --base src/main/css --dir target/classes/static/css",
+		"build:css": "npx postcss-cli src/main/css/**/*.css --base src/main/css --dir target/classes/static/css",
 		"build:js": "npx rollup --config",
 		"dev": "npx concurrently \"npm:watch-js\" \"npm:watch-css\"",
 		"watch-css": "npx onchange -i src/main/css -- npm run build:css",
-		"watch-js": "npx rollup -c -w"
+		"watch-js": "npx rollup --config --watch"
 	},
 	"dependencies": {
 		"tailwindcss": "^2.2.15"
@@ -21,16 +21,17 @@
 		"autoprefixer": "^10.3.4",
 		"concurrently": "^6.2.1",
 		"cssnano": "^5.0.8",
-		"onchange": "^7.1.0",
-		"postcss-cli": "^8.3.1",
-		"rollup": "^2.56.3",
-		"rollup-plugin-terser": "^7.0.2",
 		"cypress": "^8.4.0",
 		"eslint": "^7.32.0",
 		"eslint-config-airbnb": "^18.2.1",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-html": "^6.1.2",
 		"eslint-plugin-prettier": "^4.0.0",
-		"eslint-plugin-unused-imports": "^1.1.4"
+		"eslint-plugin-unused-imports": "^1.1.4",
+		"onchange": "^7.1.0",
+		"postcss": "^8.3.6",
+		"postcss-cli": "^8.3.1",
+		"rollup": "^2.56.3",
+		"rollup-plugin-terser": "^7.0.2"
 	}
 }
