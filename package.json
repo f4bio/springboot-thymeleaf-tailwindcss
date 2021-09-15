@@ -11,9 +11,7 @@
 		"watch-js": "npx rollup --config --watch"
 	},
 	"dependencies": {
-		"tailwindcss": "^2.2.15"
-	},
-	"devDependencies": {
+		"tailwindcss": "^2.2.15",
 		"@babel/cli": "^7.15.4",
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",
