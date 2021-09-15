@@ -1,15 +1,14 @@
 tasks:
 - init: |
-    curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-doctor | bash
+    curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
     curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-doctor | bash
     nodenv install
     npm install
     curl https://pre-commit.com/install-local.py | python -
     pre-commit install
     pre-commit run --all-files
-    ./mvnw package -DskipTests
 - command: |
-    npm run build
+    ./mvnw package -DskipTests
     java -jar target/*.jar
 
 # exposed ports

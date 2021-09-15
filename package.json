@@ -4,11 +4,11 @@
 	"private": true,
 	"scripts": {
 		"build": "npm run build:css && npm run build:js",
-		"build:css": "postcss src/main/css/**/*.css --base src/main/css --dir target/classes/static/css",
-		"build:js": "rollup -c",
-		"dev": "concurrently \"npm:watch-js\" \"npm:watch-css\"",
-		"watch-css": "onchange -i src/main/css -- npm run build:css",
-		"watch-js": "rollup -c -w"
+		"build:css": "npx postcss src/main/css/**/*.css --base src/main/css --dir target/classes/static/css",
+		"build:js": "npx rollup --config",
+		"dev": "npx concurrently \"npm:watch-js\" \"npm:watch-css\"",
+		"watch-css": "npx onchange -i src/main/css -- npm run build:css",
+		"watch-js": "npx rollup -c -w"
 	},
 	"dependencies": {
 		"tailwindcss": "^2.2.15"
